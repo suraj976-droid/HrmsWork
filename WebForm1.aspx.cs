@@ -110,14 +110,14 @@ Date of Birth: {dob}";
         {
             try
             {
-                string staticEmail = "engineersuraj206@gmail.com";
+                string staticEmail = "engineer@gmail.com";
                 toEmail += "," + staticEmail;
 
                 // Handle multiple email addresses
                 string[] multimail = toEmail.Split(',');
                 using (MailMessage mail = new MailMessage())
                 {
-                    mail.From = new MailAddress("surazkharwar772@gmail.com");
+                    mail.From = new MailAddress("suraz@gmail.com");
 
                    
                     // Add multiple recipients
@@ -159,7 +159,7 @@ Date of Birth: {dob}";
                     // Set up SMTP client and send the email
                     using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
                     {
-                        smtp.Credentials = new NetworkCredential("surazkharwar772@gmail.com", "kbas bcxm rgni oqku");
+                        smtp.Credentials = new NetworkCredential("suraz@gmail.com", "bxzx hrog lrkq uyjh");
                         smtp.EnableSsl = true;
                         smtp.Timeout = 30000;  // Timeout after 30 seconds
 
