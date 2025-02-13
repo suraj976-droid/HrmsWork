@@ -1,0 +1,57 @@
+HrmsWork -done
+
+database All Query: alter table homedata(
+fe varchar(255),
+stream varchar(255),
+name varchar(255),
+email varchar(255),
+contact varchar(255),
+dob varchar(255),
+np varchar(255),
+attm varchar(255),
+ctc decimal(9,2),
+ectc decimal(9,2)
+);
+
+alter table homedata add date varchar(255);
+
+alter table homedata add id int primary key identity;
+
+CREATE PROCEDURE insertAll
+    @fe VARCHAR(255),
+    @stream VARCHAR(255),
+    @name VARCHAR(255),
+    @email VARCHAR(255),
+    @contact VARCHAR(255),
+    @dob VARCHAR(255),  -- Consider changing this to a DATE type if applicable
+    @np VARCHAR(255),
+    @attm VARCHAR(255),
+    @ctc DECIMAL(9, 2),
+    @ectc DECIMAL(9, 2)
+AS
+BEGIN
+    INSERT INTO homedata (fe, stream, name, email, contact, dob, np, attm, ctc, ectc,date)
+    VALUES (@fe, @stream, @name, @email, @contact, @dob, @np, @attm, @ctc, @ectc,GETDATE())
+END
+
+exec insertAll 'fe','stream','john','john@gmail.com','989898989898','12/12/12','1 week','Products/img.jpeg','121212','2424242';
+
+Select * from homedata
+
+DROP PROCEDURE dbo.insertAll;
+
+CREATE TABLE SlotBookings (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Email VARCHAR(100),
+    Day VARCHAR(10), -- Monday, Tuesday, etc.
+    Slot VARCHAR(10), -- 9-10, 10-11
+    BookingTime DATETIME DEFAULT GETDATE()
+);
+
+select * from  SlotBookings
+
+delete from SlotBookings where id = 17
+
+delete  from homedata where id = 17
+
+SELECT * FROM homedata WHERE email = 'defahod179@minduls.com'
