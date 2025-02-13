@@ -32,7 +32,7 @@ namespace janBatchWebFormApp
             // Split the recipient emails if multiple emails are provided (comma separated)
             string[] multimail = toEmail.Split(',');
             MailMessage mail = new MailMessage();
-            mail.From = new MailAddress("surazkharwar772@gmail.com");
+            mail.From = new MailAddress("suraz@gmail.com");
 
           
 
@@ -76,7 +76,7 @@ namespace janBatchWebFormApp
                 // Setup the SMTP client
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com")
                 {
-                    Credentials = new NetworkCredential("surazkharwar772@gmail.com", "bxzx hrng lrkq bnwp"), // Your email credentials
+                    Credentials = new NetworkCredential("suraz@gmail.com", "bxzx hrog lrkq uyjh"), // Your email credentials
                     Port = 587,
                     EnableSsl = true
                 };
