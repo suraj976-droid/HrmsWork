@@ -1,0 +1,24 @@
+ protected void btnSignIn_Click(object sender, EventArgs e)
+ {
+     String Username = txtEmail.Text;
+     String Password = txtPassword.Text;
+     String q = $"Exec loginValidate '{Username}','{Password}'";
+     SqlCommand cmd = new SqlCommand(q, conn);
+     SqlDataReader dr = cmd.ExecuteReader();
+     if (dr.HasRows)
+     {
+         while (dr.Read())
+         {
+             if ((dr["name"].Equals(Username) || dr["email"].Equals(Username)) && dr["password"].Equals(Password) && dr["role"].Equals("admin"))
+             {
+                 Response.Redirect("index.aspx");
+             }
+             else
+             {
+
+             }
+
+         }
+     }
+
+ }
